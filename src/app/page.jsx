@@ -7,13 +7,13 @@ const poppins = Poppins({
   weight: ["400", "700"],
 });
 
-export const revalidate = 0; // ensures fresh fetch on every request
+export const revalidate = 0; 
 
 // Fetch data server-side and pick a random value
 async function getRandomPerformance() {
   const res = await fetch(
     "https://68e0325593207c4b4793f202.mockapi.io/api/seo/performance",
-    { cache: "no-store" } // disable caching for new random value on each refresh
+    { cache: "no-store" } 
   );
   if (!res.ok) throw new Error("Failed to fetch performance data");
   const data = await res.json();
